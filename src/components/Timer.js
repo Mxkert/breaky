@@ -23,7 +23,7 @@ const Timer = () => {
 
       const pauseTimes = [10, 20, 30]
       
-      pauseTimes.map(pause => {
+      pauseTimes.forEach(pause => {
         if (seconds === pause) {
           if ("Notification" in window && Notification.permission === "granted") {
             new Notification(pause + 's verstreken');
