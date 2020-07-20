@@ -4,7 +4,6 @@ import './Timer.css';
 const Timer = () => {
   const [seconds, setSeconds] = useState(0);
   const [isActive, setIsActive] = useState(false);
-  const [pauses, setPauses] = useState([])
 
   function toggle() {
     setIsActive(!isActive);
@@ -22,11 +21,9 @@ const Timer = () => {
         setSeconds(seconds => seconds + 1);
       }, 1000);
 
-      setPauses([
-        10, 20, 30
-      ])
+      const pauseTimes = [10, 20, 30]
       
-      pauses.map(pause => {
+      pauseTimes.map(pause => {
         if (seconds === pause) {
           if ("Notification" in window && Notification.permission === "granted") {
             new Notification(pause + 's verstreken');
