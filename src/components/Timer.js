@@ -4,9 +4,7 @@ import './Timer.css';
 const Timer = () => {
   const [seconds, setSeconds] = useState(0);
   const [isActive, setIsActive] = useState(false);
-  const [pauses, setPauses] = useState([
-    10, 20, 30
-  ])
+  const [pauses, setPauses] = useState([])
 
   function toggle() {
     setIsActive(!isActive);
@@ -23,6 +21,10 @@ const Timer = () => {
       interval = setInterval(() => {
         setSeconds(seconds => seconds + 1);
       }, 1000);
+
+      setPauses([
+        10, 20, 30
+      ])
       
       pauses.map(pause => {
         if (seconds === pause) {
@@ -62,6 +64,7 @@ const Timer = () => {
         <button className="button" onClick={reset}>
           Reset
         </button>
+        <button onClick={() => requestNotificationPermission()}>Vraag</button>
       </div>
     </div>
   );
