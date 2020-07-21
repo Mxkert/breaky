@@ -21,7 +21,7 @@ const Timer = () => {
         setSeconds(seconds => seconds + 1);
       }, 1000);
 
-      const pauseTimes = [10, 20, 30]
+      const pauseTimes = [1800, 3600, 5400, 7200, 9000, 10800, 12600, 14400, 16200, 18000, 19800, 21600, 23400, 25200, 27000]
       
       pauseTimes.forEach(pause => {
         if (seconds === pause) {
