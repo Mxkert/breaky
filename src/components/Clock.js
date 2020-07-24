@@ -29,7 +29,7 @@ const Clock = ({ items }) => {
 
       let time = 0;
       
-      items.map(block => {
+      items.forEach(block => {
         time = time + parseInt(block.time)
         if (seconds === time) {
           setIsActive(false)
@@ -44,7 +44,7 @@ const Clock = ({ items }) => {
       clearInterval(interval);
     }
     return () => clearInterval(interval);
-  }, [isActive, seconds]);
+  }, [isActive, seconds, items]);
 
   useEffect(() => {
     console.log(stretches)
