@@ -5,6 +5,7 @@ const Clock = ({ items }) => {
   const [seconds, setSeconds] = useState(0);
   const [isActive, setIsActive] = useState(false);
   const [stretches, setStrechtes] = useState(null);
+  const [focusMode, setFocusMode] = useState(false);
 
   function toggle() {
     setIsActive(!isActive)
@@ -32,10 +33,12 @@ const Clock = ({ items }) => {
       items.forEach(block => {
         time = time + parseInt(block.time)
         if (seconds === time) {
-          setIsActive(false)
           setStrechtes(block.stretches)
-          if ("Notification" in window && Notification.permission === "granted") {
-            new Notification((block.time / 60) + ' minuten verstreken');
+          if (!focusMode) {
+            setIsActive(false)
+            if ("Notification" in window && Notification.permission === "granted") {
+              new Notification((block.time / 60) + ' minuten verstreken');
+            }
           }
         }
       })
@@ -45,10 +48,6 @@ const Clock = ({ items }) => {
     }
     return () => clearInterval(interval);
   }, [isActive, seconds, items]);
-
-  useEffect(() => {
-    console.log(stretches)
-  }, [stretches]);
 
   function requestNotificationPermission() {
     // Some browsers don't support Notification yet. I'm looking at you iOS Safari
@@ -62,37 +61,27 @@ const Clock = ({ items }) => {
     }
   }
 
+  function toggleFocusMode() {
+    setFocusMode(!focusMode)
+  }
+
   return (
-    <div className="app">
-      { stretches ?
-        <>
-          <ul>
-          { stretches.map(stretch => {
-            return (
-              <li>{ stretch.stretch }</li>
-            )
-          }) }
-          </ul>
-          <button className={`button button-primary button-primary-${isActive ? 'active' : 'inactive'}`} onClick={toggle}>
-            {isActive ? 'Pause' : 'Start'}
-          </button>
-        </>
-      :
-        <>
-          <div className="time">
-            {seconds}s
-          </div>
-          <div className="row">
-            <button className={`button button-primary button-primary-${isActive ? 'active' : 'inactive'}`} onClick={toggle}>
-              {isActive ? 'Pause' : 'Start'}
-            </button>
-            <button className="button" onClick={reset}>
-              Reset
-            </button>
-            <button onClick={() => requestNotificationPermission()}>Vraag</button>
-          </div>
-        </>
-      }
+    <div className="clock">
+      <div className="time">
+        {seconds}s
+      </div>
+      <div className="row">
+        <button className={`button button-primary button-primary-${isActive ? 'active' : 'inactive'}`} onClick={toggle}>
+          {isActive ? 'Pause' : 'Start'}
+        </button>
+        <button className="button" onClick={() => toggleFocusMode()}>
+          { focusMode ? 
+            <span>Focus mode activated</span>
+          :
+            <span>Start focus mode</span>
+          }
+        </button>
+      </div>
     </div>
   );
 };

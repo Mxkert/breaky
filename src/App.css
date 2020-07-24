@@ -12,27 +12,88 @@ body {
   margin: 0;
 }
 
+.App {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
 .container {
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
+  width: 100%;
+  height: 100%;
+  max-width: 450px;
+  max-height: 650px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-@media (min-width: 768px) {
-  .container {
-    width: 750px;
-  }
+/* Buttons */
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
-@media (min-width: 992px) {
-  .container {
-    width: 970px;
-  }
+.button {
+  background: #E5E5E5;
+  width: auto;
+  padding: 0 1.5rem;
+  height: 70px;
+  border-radius: 8px;
+  color: #000;
+  font-size: 1em;
+  -webkit-appearance: media-slider !important;
+  -moz-appearance: none !important;
 }
 
-@media (min-width: 1200px) {
-  .container {
-    width: 1170px;
-  }
+.button.blue {
+  background: #0094FF;
+  border-radius: 8px;
+  color: #fff;
+}
+
+.button.delete-button {
+  background: #CA0B00;
+  color: #fff;
+  margin-bottom: 1rem;
+  margin-left: 1rem;
+}
+
+.button.success-button {
+  background: #4BB543;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.button:hover {
+  cursor: pointer;
+}
+
+.button.icon {
+  display: flex;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Forms */
+form input, form textarea {
+  display: block;
+  padding: 24px;
+  width: 87.5%;
+  font-size: 18px;
+  margin-bottom: 1rem;
+  border-radius: 6px;
+  box-shadow: none;
+  border: 1px solid #eee;
+  box-shadow: 0 10px 20px -10px rgba(0,0,0,.05);
+}
+
+.input-with-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

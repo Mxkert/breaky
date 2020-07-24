@@ -1,0 +1,627 @@
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SWB</title>
+</head>
+<link rel="stylesheet" href="/assets/css/main.css">
+<body>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,700&display=swap');
+    @import url(https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css);
+    @import url(https://fonts.googleapis.com/css?family=Raleway:400,500,700);
+    
+    /*=========================================*/
+    /* Header styles
+    /*=========================================*/
+    *{
+    
+        margin: 0;
+        padding: 0;
+    }
+    
+    header {
+      margin: 0 auto;
+      position: relative;
+      width: 940px;
+        z-index: 20;
+        vertical-align: middle;
+    }
+    
+    #logo {
+      margin: 0 auto;
+      min-height: 92px;
+      overflow: hidden;
+      padding: 0 20px;
+      position: relative;
+        width: 160px;
+      z-index: 20;
+        text-align: center;
+    }
+    #logo h1 a { display: block; }
+    #logo h1 a span { margin-left: -999999px; }
+    
+    #primary-menu {
+        position: absolute;
+      top: 100px;
+      left: 0;
+      text-transform: uppercase;
+      width: 100%;
+      overflow: hidden;
+    
+        z-index: 10;
+    }
+    #primary-menu .split-menu {
+      float: left;
+      width: 320px;
+    }
+    #primary-menu .right-menu { float: right; }
+    
+    /* parent menu */
+    #primary-menu ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        line-height: 36px;
+        text-align: center;
+    }
+    #primary-menu ul li {
+    
+      position: relative;
+        display: inline-block;
+        z-index: 40;
+      *display: inline;
+      zoom: 1;
+    }
+    
+    #primary-menu ul a {
+      color: #333;
+      display: block;
+      font: normal normal 13px 'Rockwell', serif;
+      line-height: 36px;
+      padding: 0 20px;
+      position: relative;
+      text-decoration: none;
+    }
+    #primary-menu ul a:hover { color: #bd7ac4; }
+    
+    /* Media queries
+    /*=========================================*/
+    @media screen and (max-width: 1035px) {
+      header {
+        width: auto;
+          max-width: 720px;
+        }
+    
+      #primary-menu {
+    
+        display: block;
+        margin-top: 20px;
+            position: static;
+     
+    
+      }
+      #primary-menu .split-menu {
+        float: left;
+            width: 50%;
+    
+    
+        }
+        #primary-menu ul a {
+            font-size:11px; }
+    
+    
+      #primary-menu .left-menu > ul { text-align: right; }
+      #primary-menu .right-menu > ul { text-align: left; }
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    @media screen and (max-width: 700px){
+    
+    
+        .top{
+    
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        min-width: 500px;
+        max-height: 400px;
+        min-height: 400px;;
+        position: relative;
+        top: -100px;
+        left: 20px;
+    
+        
+    }
+    .booking .middle{
+    
+        display: block;
+        position: relative;
+        top: -350px;
+        width: 100%;
+        overflow: hidden;
+    
+        height: 320px;
+    }
+    .booking{
+        font-family: Montserrat;
+        position: relative;
+        text-align: center;
+        color:black;
+        font-weight: bold;
+        font-size: 60px;
+        color: white;
+    
+    }
+    .booking .centered {
+        position: absolute;
+        bottom: 130%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      .booking .btn{
+        position: absolute;
+        bottom: 115%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        background-color: rgb(0, 0, 0);
+        color:white;
+        font-size: 20px;
+        font-weight: bold;
+        padding: 20px 24px;
+        border: none;
+        cursor: pointer;
+      }
+     .about{
+         margin-top: -320px;
+    
+     }
+     .about h2{
+         font-family: Montserrat;
+         color: black;
+         font-weight: bold;
+         font-size: 40px;
+         text-transform: uppercase;
+         text-align: center;
+    
+     }
+     .about p{
+         font-family: Montserrat;
+         font-size: 12;
+         padding: 25px;
+         text-align: center;
+    
+        
+    
+     }
+    }
+    
+    
+    @media screen and (min-width: 700px){
+        hr{ 
+            margin: 15px;
+            max-width: 700px;
+            border-top: 1px solid #E6D1D0;
+            display: block;
+        margin-left: auto;
+        margin-right: auto;
+    
+    
+        }
+        .top{
+    
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        min-width: 500px;
+        max-height: 400px;
+        min-height: 400px;;
+        position: relative;
+        left: 20px;
+    
+        
+    }
+    .booking .middle{
+        display: block;
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+        max-height: 400px;
+        top: -350px;
+        min-width: 700px;
+    
+    }
+    
+    .booking{
+        position: relative;
+        text-align: center;
+        color:black;
+        font-weight: bold;
+        font-size: 60px;
+        color: white;
+        text-align: center;
+        font-family: Montserrat;
+    
+    }
+    .booking .centered {
+        position: absolute;
+        bottom: 120%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      .booking .btn{
+        position: absolute;
+        bottom: 110%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        background-color: rgb(0, 0, 0);
+        color: white;
+        font-size: 20px;
+        font-weight: bold;
+        padding: 20px 24px;
+        border: none;
+        cursor: pointer;
+    
+      }
+      .about{
+        margin-top: -320px;
+        display: block;
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 700px;
+    
+    
+    }
+    .about h2{
+        font-family: Montserrat;
+        color: black;
+        font-weight: bold;
+        font-size: 40px;
+        text-transform: uppercase;
+        text-align: center;
+        float: left;
+        padding-right: 30px;
+    
+    }
+    .about p{
+        font-family: Montserrat;
+        font-size: 12;
+        padding: 25px;
+        text-align: justify;
+        float: inline-end;
+    
+       
+    
+    }
+    }
+    .order{
+        text-align: center;
+        font-weight: bold;
+        font-family: Montserrat;
+        font-size: 35px;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        max-width: 700px;
+        margin: 30px;
+        grid-gap: 10px;
+        align-items: stretch;
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+        }
+      
+      .grid > article {
+        border-radius: 3px;
+        text-align: center;
+      }
+      
+      .grid > article:hover{
+        transition: transform .1s ease-out;
+        transform: translateY(5px);
+      }
+      
+      .grid > article img {
+        width: 100%;
+        overflow: hidden;
+    
+      }
+      
+      
+      .text {
+        padding-bottom: 20px;
+      }
+      
+      .text > h3{
+        text-transform: uppercase;
+      }
+      
+      .text > button {
+        font-family: Montserrat;
+        background: #E6D1D0;
+        border: 0;
+        color: black;
+        padding: 10px;
+        width: 100%;
+        overflow: hidden;
+    
+        font-size: 15px;
+        text-transform: uppercase;
+        font-weight: bold;
+    
+      }
+      
+      
+      @media (max-width: 780px){
+     
+          hr{
+            margin: 15px;
+            max-width: 300px;
+            border-top: 1px solid #E6D1D0;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+      
+          }
+        .grid{
+          grid-template-columns: repeat(1, 1fr);
+          display: block;
+          margin-left: 200px;
+          margin-right: 200px;
+        }
+      
+        .grid > article{
+          text-align: center;
+          text-decoration: none;
+          color: black;
+        }
+      
+      
+      
+      }
+      
+      @media (max-width: 500px){
+          hr{
+            margin: 15px;
+            max-width: 300px;
+            border-top: 1px solid #E6D1D0;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+    
+          }
+        .grid{
+          grid-template-columns: repeat(1, 1fr);
+          display: block;
+          margin-left: 90px;
+          margin-right: 90px;
+        }
+      
+        .grid > article{
+          text-align: center;
+          text-decoration: none;
+          color: black;
+        }
+    
+        
+      }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      footer{
+        position: relative;
+        bottom: 0;
+        left: auto;
+        right: auto;
+        height: 100px;
+        width: 100%;
+        overflow: hidden;
+        text-align: center;
+       font-family: "Open Sans",sans-serif;
+        background: white;
+        padding: 20px 0;
+      }
+    
+      .footer_container > p{
+        font-family: "Open Sans",sans-serif;
+        font-weight: bold;
+        text-align: center;
+    
+    
+      }
+      .logo{
+        text-align: center;
+    
+        width: 180px;
+        font-size: 16px;
+        font-weight: bold;
+      }
+      
+      .social_media{
+        margin: 20px 150px;
+      }
+      
+      .social_media a{
+        color: #000;
+        font-size: 24px;
+        text-decoration: none;
+        transition: .6s;
+      }
+      
+      .social_media a:hover{
+        color: pink;
+      }
+      h1{
+        font-size: 40px;
+        color: #fff;
+        font-weight: bold;
+      }
+    </style>
+
+<div id="header-wrapper">
+		
+    <header class="clearfix">
+    
+        <div id="logo">
+               <a href="main.html">
+                    <img src="assets/images/logo2.png" height="212px" width="159px">
+                    <span></span>
+                </a>
+        </div> <!-- #logo -->
+        
+        <div id="primary-menu" class="clearfix">
+            <div class="left-menu split-menu">
+                <ul class="menu">
+                    <li><a href="main.html">home</a></li>
+                    </li>
+                    <li><a href="gallery.html">gallery</a></li>
+                </ul> <!-- .left-nav -->
+            </div>
+        
+            <div class="right-menu split-menu">
+                <ul class="menu">
+                    <li><a href="menu.html">menu</a></li>
+                    <li><a href="contact.html">contact</a></li>
+                </ul>
+            </div> <!-- .right-nav -->
+        </div> <!-- #primary-menu -->
+    
+    </header>
+    
+</div> 
+
+<!-- #SHOP NOW HEADER -->
+<div class="top"></div>
+<div class="booking">
+    <img src="/assets/images/header.jpg" class="middle"  >
+    <div class="centered">DALLAS<br>LOCAL</div>
+    <button class="btn">SHOP NOW</button>
+
+</div>
+
+<!-- #about section -->
+<div class="about">
+ <h2>sweets by <br> nat</h2>
+ <p class="desc">We are a 100% family owned business. We are based in Dallas, TX. Offering pickup and delivery on sweets, such as cakes, cupcakes, etc.</p>
+
+</div>
+<hr>
+<p class="order">ORDER</p>
+<main class="grid">
+    <article>
+      <img src="/assets/images/cupcake.jpg" alt="Sample photo" width="233" height="349">
+      <div class="text">
+        <button>
+
+            SHOP <br> CUPCAKES</button>
+      </div>
+    </article>
+
+    <article>
+      <img src="/assets/images/cookies.jpg" alt="Sample photo"width="233" height="349">
+      <div class="text">
+        <a href="menu.html">
+        <button>SHOP <br> COOKIES</button></a>
+      </div>
+    </article>
+
+    <article>
+      <img src="/assets/images/strawberry.jpg" alt="Sample photo" width="233" height="349">
+      <div class="text">
+        <button>SHOP<br>STRAWBERRIES</button>
+      </div>
+    </article>
+
+     <article>
+      <img src="/assets/images/custom.jpg" alt="Sample photo" width="233" height="349">
+      <div class="text">
+        
+        <button>SHOP <br> CUSTOM</button>
+      </div>
+    </article>
+  </main>
+  <hr>
+
+  <div class="insta"> 
+      <p class="order">FOLLOW @SWEETSBYNAT ON INSTAGRAM</p>
+  </div>
+
+
+
+
+
+<footer>
+    <div class="footer_container">
+      <div class="social_media">
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+        <p>SBN © 2020 All Rights Reserved.</p>
+      </div>
+  </footer>
+
+  
+</body>
+</html>

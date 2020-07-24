@@ -1,5 +1,4 @@
 import React from 'react';
-import { FaList } from 'react-icons/fa'
 import './Blocks.css';
 
 const Blocks = ({ items }) => {
@@ -8,25 +7,21 @@ const Blocks = ({ items }) => {
     <>
       { items.map(block => {
         return (
-          <>
+          <div className="blocks">
             <div className="block work">
-              <span className="digits">{ block.time }</span>
+              <span className="digits">{ block.time / 60 }</span>
               <span>MIN</span>
             </div>
-            <div className="block stretch">
-              <span>STRETCH</span>
-              { block.stretches.map(stretch => {
-                return (
-                  <h3>{ stretch.stretch }</h3>
-                )
-              }) }
-              <FaList />
-            </div>
-          </>
+            {/* { block.stretches.map(stretch => {
+              return (
+                <h3>{ stretch.stretch }</h3>
+              )
+            }) } */}
+          </div>
         )
       }) }
     </>
-  );
+  )
 };
 
 export default Blocks;
