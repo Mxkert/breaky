@@ -21,20 +21,21 @@ const Timer = () => {
 
   const [blocks, setBlocks] = useState(null)
   const [addingBlock, setAddingBlock] = useState(false)
+  const [startWorking, setStartWorking] = useState(false)
   
   const addBlock = (data) => {
     const newBlock = {
       time: data.time * 60,
       stretches: data.stretches
     }
-    { blocks ? setBlocks(blocks => [...blocks, newBlock]) : setBlocks([newBlock])}
+    blocks ? setBlocks(blocks => [...blocks, newBlock]) : setBlocks([newBlock])
     setAddingBlock(false)
     reset();
   }
 
-  function addABlock() {
-    setAddingBlock(true)
-  }
+  // function addABlock() {
+  //   setAddingBlock(true)
+  // }
 
   return (
     <div className="container">
@@ -44,7 +45,7 @@ const Timer = () => {
           { addingBlock ?
           <form onSubmit={handleSubmit(addBlock)}>
             <label htmlFor="time">
-              <input type="number" ref={register} name="time" placeholder="Time for block" />
+              <input type="number" ref={register} name="time" placeholder="Amount of minutes in block" />
             </label>
             {fields.map((item, index) => {
               return (
@@ -52,7 +53,7 @@ const Timer = () => {
                   <input
                     name={`stretches[${index}].stretch`}
                     defaultValue={`${item.title}`} // make sure to set up defaultValue
-                    placeholder="Stretch"
+                    placeholder="Stretch description"
                     ref={register()}
                   />
                   <button className="button delete-button" type="button" onClick={() => remove(index)}>
@@ -79,19 +80,21 @@ const Timer = () => {
             <>
               { blocks ? 
                 <>
-                  <Clock items={blocks} />
-                  <div className="blocks-container">
-                    <Blocks items={blocks} />
-                    <div className="start-timer">
-                      <button className="button" onClick={() => setAddingBlock(true)}>Add more blocks</button>
-                      <button className="button">Start working!</button>
+                  { startWorking ?
+                    <Clock items={blocks} />
+                  :
+                    <div className="blocks-container">
+                      <Blocks items={blocks} />
+                      <div className="start-timer">
+                        <button className="button" onClick={() => setAddingBlock(true)} style={{ marginBottom: '1rem'}}>Add another block</button>
+                        <button className="button success-button" onClick={() => setStartWorking(true)}><FaCheck style={{ position: 'relative', top: '2px' }}/></button>
+                      </div>
                     </div>
-                  </div>
+                  }
                 </>
               :
                 <div className="start">
-                  <h3>Add your first block</h3>
-                  <button className="button success-button" onClick={() => setAddingBlock(true)}><FaPlus /></button>
+                  <button className="button success-button" onClick={() => setAddingBlock(true)}><FaPlus style={{ position: 'relative', top: '2px', marginRight: '.5rem' }}/> Add your first block</button>
                 </div>
               }
             </>
