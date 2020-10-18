@@ -20,6 +20,7 @@ const Timer = () => {
   );
 
   const [blocks, setBlocks] = useState(null)
+  const [blockTime, setBlockTime] = useState(null)
   const [addingBlock, setAddingBlock] = useState(false)
   const [startWorking, setStartWorking] = useState(false)
   
@@ -40,7 +41,6 @@ const Timer = () => {
   return (
     <div className="container">
       <div className="wrapper">
-
 
           { addingBlock ?
           <form onSubmit={handleSubmit(addBlock)}>
